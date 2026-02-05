@@ -401,7 +401,7 @@
               'SDB_MEASURE_USE_TEMP_DIR', # use tmpdir for the access calls
             ],
           }],
-          [ 'OS=="dragonfly" or OS=="freebsd"', {
+          [ 'OS=="dragonfly" or OS=="freebsd" or OS=="qnx"', {
             'defines': [
               'FREEBSD',
             ],
@@ -416,7 +416,7 @@
               'OPENBSD',
             ],
           }],
-          ['OS=="mac" or OS=="ios" or OS=="dragonfly" or OS=="freebsd" or OS=="netbsd" or OS=="openbsd"', {
+          ['OS=="mac" or OS=="ios" or OS=="dragonfly" or OS=="freebsd" or OS=="netbsd" or OS=="openbsd" or OS=="qnx"', {
             'defines': [
               'HAVE_BSD_FLOCK',
             ],
@@ -444,7 +444,7 @@
               '-std=c99',
             ],
             'cflags_cc': [
-              '-std=c++11',
+              '-std=c++17',
             ],
             'conditions': [
               [ 'target_arch=="ia32"', {

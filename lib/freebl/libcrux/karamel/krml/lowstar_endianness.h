@@ -58,6 +58,8 @@
 #include <sys/endian.h>
 #elif defined(__OpenBSD__)
 #include <endian.h>
+#elif defined(__QNX__)
+#include <net/netbyte.h>
 
 /* ... for Windows (MSVC)... not targeting XBOX 360! */
 #elif defined(_MSC_VER)

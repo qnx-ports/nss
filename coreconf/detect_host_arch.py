@@ -10,7 +10,12 @@ import fnmatch
 import platform
 
 def main():
-    host_arch = platform.machine().lower()
+    if platform.system() == 'QNX':
+        host_arch = platform.processor().lower()
+        if host_arch == "aarch64le":
+            host_arch = "aarch64"
+    else:
+        host_arch = platform.machine().lower()
     if host_arch in ('amd64', 'x86_64'):
         host_arch = 'x64'
     elif fnmatch.fnmatch(host_arch, 'i?86') or host_arch == 'i86pc':
