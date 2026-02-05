@@ -1,4 +1,4 @@
-// Copyright 2015, Google Inc.
+// Copyright 2025, Google Inc.
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -27,20 +27,12 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+// Unit test for Google Test's --gtest_fail_if_no_test_linked flag.
+//
+// This program will be invoked from a Python test.
+// Don't run it directly.
+
 #include "gtest/gtest.h"
 
-namespace {
-class DummyTest : public ::testing::TestWithParam<const char *> {};
-
-TEST_P(DummyTest, Dummy) {}
-
-INSTANTIATE_TEST_SUITE_P(InvalidTestName, DummyTest,
-                         ::testing::Values("InvalidWithQuotes"),
-                         ::testing::PrintToStringParamName());
-
-}  // namespace
-
-int main(int argc, char *argv[]) {
-  testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}
+// A dummy test that is enabled.
+TEST(SomeTest, Test1) {}
