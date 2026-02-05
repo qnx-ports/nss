@@ -15,6 +15,8 @@
 
 #include "mplogic.h"
 #include "mpi.h"
+#include <iomanip>
+
 namespace nss_test {
 
 void gettime(struct timespec* tp) {
