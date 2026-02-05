@@ -187,13 +187,13 @@ nssCKObject_IsAttributeTrue(
     NSSSlot *slot,
     PRStatus *rvStatus)
 {
-    CK_BBOOL bool;
+    CK_BBOOL m_bool;
     CK_ATTRIBUTE_PTR attr;
     CK_ATTRIBUTE atemplate = { 0, NULL, 0 };
     CK_RV ckrv;
     void *epv = nssSlot_GetCryptokiEPV(slot);
     attr = &atemplate;
-    NSS_CK_SET_ATTRIBUTE_VAR(attr, attribute, bool);
+    NSS_CK_SET_ATTRIBUTE_VAR(attr, attribute, m_bool);
     nssSession_EnterMonitor(session);
     ckrv = CKAPI(epv)->C_GetAttributeValue(session->handle, object,
                                            &atemplate, 1);
@@ -203,7 +203,7 @@ nssCKObject_IsAttributeTrue(
         return PR_FALSE;
     }
     *rvStatus = PR_SUCCESS;
-    return (PRBool)(bool == CK_TRUE);
+    return (PRBool)(m_bool == CK_TRUE);
 }
 
 NSS_IMPLEMENT PRStatus
