@@ -99,10 +99,12 @@ static unsigned char b64[256] = {
     /*  78: */ 1, 1, 1, 0, 0, 0, 0, 0
 };
 
+#if !defined(true) && !defined(false)
 enum {
     false = 0,
     true = 1
 } bool;
+#endif
 
 #define isatobchar(c) (b64[c])
 

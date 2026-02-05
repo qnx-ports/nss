@@ -282,13 +282,13 @@ appendString(char *string)
  * append a bool, T= true, F=false
  */
 static void
-appendBool(PRBool bool)
+appendBool(PRBool m_bool)
 {
     if (!buffer.data) {
         return;
     }
 
-    if (bool) {
+    if (m_bool) {
         appendLabel('t');
     } else {
         appendLabel('f');
@@ -385,9 +385,9 @@ usage_long(const char *prog)
 }
 
 static const char *
-bool2String(PRBool bool)
+bool2String(PRBool m_bool)
 {
-    return bool ? "true" : "false";
+    return m_bool ? "true" : "false";
 }
 
 /*
