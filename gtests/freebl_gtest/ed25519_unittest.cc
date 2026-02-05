@@ -9,7 +9,7 @@
 #include "blapi.h"
 #include "nss_scoped_ptrs.h"
 #include "secerr.h"
-
+#include <iomanip>
 namespace nss_test {
 
 class EDDSATest : public ::testing::Test {
