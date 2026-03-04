@@ -165,7 +165,7 @@
           ],
         }],
         [ 'OS=="linux" or OS=="android" or OS=="dragonfly" or OS=="freebsd" or \
-           OS=="netbsd" or OS=="openbsd"', {
+           OS=="netbsd" or OS=="openbsd" or OS =="qnx"', {
           'cflags': [
             '-mpclmul',
             '-maes',
@@ -219,7 +219,7 @@
         '-mpclmul', '-maes'
       ],
       'conditions': [
-        [ 'OS=="linux" or OS=="android" or OS=="dragonfly" or OS=="freebsd" or OS=="netbsd" or OS=="openbsd"', {
+        [ 'OS=="linux" or OS=="android" or OS=="dragonfly" or OS=="freebsd" or OS=="netbsd" or OS=="openbsd" or OS=="qnx"', {
           'cflags': [
             '-mpclmul', '-maes'
           ],
